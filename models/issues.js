@@ -33,4 +33,4 @@ Issues.init(
         modelName:'issues'
     }
 );
-module
+module.exports = Issues;
