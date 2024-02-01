@@ -54,3 +54,11 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+.container {
+    display: flex;
+}
+
+.left-side, .right-side {
+    display: inline;
+    padding: 10px;
+}
