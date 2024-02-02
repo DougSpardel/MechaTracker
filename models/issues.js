@@ -14,7 +14,7 @@ Issues.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'vehicle',
-                key:'vehicle_number'
+                key:'vehicle_number',
             },
         },
         description:{
@@ -22,8 +22,8 @@ Issues.init(
             
         },
         issue_status:{
-            type: DataTypes.BOOLEAN
-        }
+            type: DataTypes.BOOLEAN,
+        },
     },
     {
         sequelize,
