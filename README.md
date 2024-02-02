@@ -12,3 +12,5 @@ view:handlebars\
 server.js
 
 login hashing bcrypt to hide user data
+add bcrypt
+comparing bycrpt to inputed password
