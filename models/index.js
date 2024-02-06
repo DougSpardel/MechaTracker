@@ -12,5 +12,5 @@ Issues.belongsTo(Vehicle,{
 
 module.exports = {
     Issues,
-    Vehicle
+    Vehicle,
 };

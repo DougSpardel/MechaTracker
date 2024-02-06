@@ -1,7 +1,8 @@
-const express = require('express');
-const Issues = require('../../models/issues'); // Update the path to where your Issues model is located
+const sequelize = require('sequelize')
+const router = require('express').Router();
+const {Issues,Vehicle} = require('../../models'); // Update the path to where your Issues model is located
 
-const router = express.Router();
+
 
 // GET all issues
 router.get('/', async (req, res) => {
@@ -30,10 +31,12 @@ router.get('/:id', async (req, res) => {
 // POST a new issue
 router.post('/', async (req, res) => {
     try {
-        const issue = await Issues.create(req.body);
-        res.status(201).json(issue);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
+        const issueData = await Issues.create(req.body);
+        
+        res.status(200).json(issueData);
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
     }
 });
 
@@ -50,7 +53,7 @@ router.put('/:id', async (req, res) => {
             res.status(404).json({ message: 'Issue not found' });
         }
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        res.status(500).json({ message: error.message });
     }
 });
 
@@ -61,7 +64,7 @@ router.delete('/:id', async (req, res) => {
             where: { id: req.params.id }
         });
         if (deleted) {
-            res.status(204).send();
+            res.status(200).send();
         } else {
             res.status(404).json({ message: 'Issue not found' });
         }
