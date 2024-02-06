@@ -1,5 +1,5 @@
 const express = require('express');
-const Vehicle = require('../models/vehicle'); // Update the path to where your Vehicle model is located
+const Vehicle = require('../../models/vehicle'); // Update the path to where your Vehicle model is located
 const router = express.Router();
 
 // GET all vehicles
