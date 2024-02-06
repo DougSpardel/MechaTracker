@@ -10,3 +10,7 @@ utils:withAuth\
 view:handlebars\
 - index.html/DouglasS\
 server.js
+
+login hashing bcrypt to hide user data
+add bcrypt
+comparing bycrpt to inputed password
