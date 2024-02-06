@@ -7,7 +7,7 @@ const issuesData = require('./issuesData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const vehicle = await Vehicle.bulkCreate(vehicleData, {
+ await Vehicle.bulkCreate(vehicleData, {
     individualHooks: true,
     returning: true,
   });
@@ -16,7 +16,7 @@ const seedDatabase = async () => {
   const issues = await Issues.bulkCreate(issuesData, {
     individualHooks: true,
     returning: true,
-  });
+    });
   process.exit(0);
 };
 

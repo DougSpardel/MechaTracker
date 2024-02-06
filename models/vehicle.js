@@ -7,8 +7,9 @@ Vehicle.init(
     {
         vehicle_number:{
             type: DataTypes.INTEGER,
-            allowNull: false,
             primaryKey:true,
+            allowNull: false,
+            
         },
         vehicle_make:{
             type:DataTypes.STRING,
