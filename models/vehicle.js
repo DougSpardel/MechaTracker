@@ -12,13 +12,13 @@ Vehicle.init(
             
         },
         vehicle_make:{
-            type:DataTypes.STRING,
+            type:DataTypes.STRING
             
         },
         vehicle_model:{
-            type:DataTypes.STRING,
+            type:DataTypes.STRING
            
-        },
+        }
 
         
     },
