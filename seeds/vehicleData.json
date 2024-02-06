@@ -1,0 +1,17 @@
+[
+    {
+        "vehicle_number": "7501",
+        "vehicle_make": "Ford",
+        "vehicle_model": "F-150"
+    },
+    {
+        "vehicle_number": "6278",
+        "vehicle_make": "Ford",
+        "vehicle_model": "F-150" 
+    },
+    {
+        "vehicle_number": "2300",
+        "vehicle_make": "Ford",
+        "vehicle_model": "F-150"
+    }
+]
