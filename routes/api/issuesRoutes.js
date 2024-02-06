@@ -1,5 +1,5 @@
 const express = require('express');
-const Issues = require('../models/issues'); // Update the path to where your Issues model is located
+const {Issues, Vehicle} = require('../../models'); // Update the path to where your Issues model is located
 const router = express.Router();
 
 // GET all issues
