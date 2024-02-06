@@ -7,16 +7,15 @@ const issuesData = require('./issuesData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const vehicle = await Vehicle.bulkCreate(vehicleData, {
+ await Vehicle.bulkCreate(vehicleData, {
     individualHooks: true,
     returning: true,
   });
-  await sequelize.sync({ force: true });
 
-  const issues = await Issues.bulkCreate(issuesData, {
+  await Issues.bulkCreate(issuesData, {
     individualHooks: true,
     returning: true,
-  });
+    });
   process.exit(0);
 };
 

@@ -1,30 +1,13 @@
 
-const express = require('express');
+
+// routes
+const router = require('express').Router();
 const issuesRoutes = require('./issuesRoutes');
-const vehicleRoutes = require('./routes/vehicleRoutes');
+const vehicleRoutes = require('./vehicleRoutes');
 
-const app = express();
+router.use('/issues',issuesRoutes);
+router.use('/vehicle',vehicleRoutes);
 
-app.use(express.json());
-app.use('/issues', issuesRoutes);
-app.use('/vehicles', vehicleRoutes);
+module.exports = router
 
-// ... (Rest of your Express server setup)
-
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
-//=======
-// api
-// const router = require('express').Router();
-// const categoryRoutes = require('./category-routes');
-// const productRoutes = require('./product-routes');
-// const tagRoutes = require('./tag-routes');
-
-// router.use('/categories', categoryRoutes);
-// router.use('/products', productRoutes);
-// router.use('/tags', tagRoutes);
-
-// module.exports = router;
 
