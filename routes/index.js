@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+// routes
+const router = require('express').Router();
+const apiRoutes = require('./api');
+const homepage = require('./homepage');
+router.use('/api', apiRoutes);
+router.use('/', homepage);
+router.use((req, res) => {
+  res.send("<h1>Wrong Route!</h1>")
+});
+
+module.exports = router
+=======
 let cars = [];
 
         document.getElementById('car-form').addEventListener('submit', function(e) {
@@ -24,3 +37,4 @@ let cars = [];
             const html = compiledTemplate({ cars });
             document.getElementById('car-status-container').innerHTML = html;
         }
+>>>>>>> a7b96242a5290d4081884cd18710f3d416a5dc0f

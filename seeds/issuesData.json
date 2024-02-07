@@ -1,0 +1,27 @@
+[
+    {
+        "vehicle_number": "7501",
+        "description":"air conditioner not working",
+        "issue_status": "false"
+    },
+    {
+        "vehicle_number": "6278",
+        "description":"emergency break light on when break isn't",
+        "issue_status": "false"
+    },
+    {
+        "vehicle_number": "7501",
+        "description":"cylinder misfire",
+        "issue_status": "false"
+    },
+    {
+        "vehicle_number": "2300",
+        "description":"death rattles",
+        "issue_status": "true"
+    },
+    {
+        "vehicle_number": "6278",
+        "description":"transmission slipping",
+        "issue_status": "false"
+    }
+]

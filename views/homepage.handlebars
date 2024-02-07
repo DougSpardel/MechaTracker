@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Garage Maintenance Tracker</title>
-    <link rel="stylesheet" href="./public/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="left-side"></div>
-        <div>
-        <h1>Garage Maintenance Tracker</h1>
-
         <!-- Form for adding/updating cars -->
         <form id="car-form">
             <div class="form-group">
@@ -31,7 +18,7 @@
             </div>
             <input type="submit" value="Add/Update Car">
         </form>
-    </div>
+
         <!-- Handlebars Template for Displaying Cars -->
         <script id="car-status-template" type="text/x-handlebars-template">
             <table>
@@ -56,11 +43,4 @@
 
         <!-- Container for the Compiled Template -->
         <div id="car-status-container"></div>
-        
-        
     </div>
-
-    <!-- JavaScript to Handle the Form and Render the Template -->
-    <script src="./routes/index.js"> </script>
-</body>
-</html>
