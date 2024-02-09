@@ -1,8 +1,8 @@
 //TODO add specific classes for the selectors and listener
 const loginFormHandeler = async (event) =>{
     event.preventDefault();
-    const email = document.querySelector('#email-id').value.trim();
-    const password = document.querySelector('#password-id').value.trim();
+    const email = document.querySelector('#emailLog').value.trim();
+    const password = document.querySelector('#passwordLog').value.trim();
 
     if(email && password) {
         const response = await fetch('/api/users/login', {
@@ -19,5 +19,5 @@ const loginFormHandeler = async (event) =>{
 };
 
 document
-    .querySelector('.login-formclass')
-    .addEventListener('submitbtn',loginFormHandeler);
+    .querySelector('.loginForm')
+    .addEventListener('#logBtn',loginFormHandeler);
