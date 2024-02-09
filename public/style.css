@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 20px;
 }
-.container {
+/* {.container {
     width: 80%;
     margin: auto;
     overflow: hidden;
@@ -61,4 +61,4 @@ input[type="submit"]:hover {
 .left-side, .right-side {
     display: inline;
     padding: 10px;
-}
+} */

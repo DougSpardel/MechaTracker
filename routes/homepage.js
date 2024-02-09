@@ -8,6 +8,10 @@ router.get('/', async (req, res) => {
 
 });
 
+router.get('/issues', async (req,res) => {
+  res.render('issues')
+})
+
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
