@@ -24,7 +24,6 @@ Issues.init(
         },
         issue_status:{
             type: DataTypes.BOOLEAN,
-            allowNull:false,
         },
     },
     {
