@@ -3,11 +3,12 @@ const router = require('express').Router();
 const {Issues,Vehicle} = require('../../models'); // Update the path to where your Issues model is located
 
 
-
 // GET all issues
 router.get('/', async (req, res) => {
     try {
-        const issues = await Issues.findAll();
+        const issues = await Issues.findAll(
+            {include: [{model: Vehicle}]}
+        );
         res.json(issues);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -17,7 +18,9 @@ router.get('/', async (req, res) => {
 // GET a single issue by id
 router.get('/:id', async (req, res) => {
     try {
-        const issue = await Issues.findByPk(req.params.id);
+        const issue = await Issues.findByPk(req.params.id, {
+            include: [{model: Vehicle}]
+        });
         if (issue) {
             res.json(issue);
         } else {
@@ -27,6 +30,12 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+
+// // GET an issue with its associated vehicle
+// router.get('/:id/withVehicle', async (req, res) => {
+//     try{
+
+//     }
 
 // POST a new issue
 router.post('/', async (req, res) => {
