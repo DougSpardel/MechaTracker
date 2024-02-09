@@ -5,39 +5,15 @@
     <link rel="stylesheet" href="./public/style.css">
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
 </head>
+<header></header>
 <body>
     <div class="container">
         <h1>Garage Maintenance Tracker</h1>
 
 {{{body}}}
     <!-- JavaScript to Handle the Form and Render the Template -->
-    <script>
-        let cars = [];
+    <script src="../../utils/helper.js"></script>
 
-        document.getElementById('car-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const vin = document.getElementById('vin').value;
-            const issue = document.getElementById('issue').value;
-            const status = document.getElementById('status').value;
-
-            const carIndex = cars.findIndex(c => c.vin === vin);
-            if (carIndex > -1) {
-                cars[carIndex].issue = issue;
-                cars[carIndex].status = status;
-            } else {
-                cars.push({ vin, issue, status });
-            }
-
-            renderCars();
-        });
-
-        function renderCars() {
-            const template = document.getElementById("car-status-template").innerHTML;
-            const compiledTemplate = Handlebars.compile(template);
-            const html = compiledTemplate({ cars });
-            document.getElementById('car-status-container').innerHTML = html;
-        }
-    </script>
+    
 </body>
 </html>
