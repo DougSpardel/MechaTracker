@@ -1,17 +1,30 @@
 const express = require('express');
-
-
 const router = express.Router();
+const {Issues} = require('../models');
+
 
 router.get('/', async (req, res) => {
-    res.render('homepage', {
+  try {
+    const issuesData = await Issues.findAll(
+   
+      
+    );
+    const issues = issuesData.map((issue)=>{
+      return issue.get({plain: true})
+    })
+        res.render('homepage', {
       title:'Home Page',
       nav1:'/issues',
       tNav1:'Issue' ,
+      issues
+  });
+} catch (error) {
+    res.status(500).json({ message: error.message });
+}
 
     })    
 
-});
+
 
 router.get('/issues', async (req,res) => {
   res.render('issues', {
@@ -25,10 +38,10 @@ router.get('/issues', async (req,res) => {
 
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
+    // if (req.session.loggedIn) {
+    //   res.redirect('/');
+    //   return;
+    // }
   
     res.render('login',{
       title:'Login'

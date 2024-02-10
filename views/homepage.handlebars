@@ -1,9 +1,22 @@
 <div class="" id="unIssue">
     {{!-- issues add a button for the issues incomplete --}}
-    {{#each issues as |issue|}}
-    <div>
-        <h2>issues</h2>
+    
+    <div id="issues">
+        <button id="woor">woor</button>
+        <h2>Issues</h2>
+        {{#each issues as |issue|}}
+        {{#if issue_status}}
+        {{else}}
+        <div id="">
+        <p>Issue: {{id}}
+            Vehicle: {{vehicle_number}}
+            Issue: {{description}}</p>
+      
+        </div>
+        {{/if}}
+        {{/each}}
     </div>
-    <h3>Incomplete</h3>
+    
 
 </div>
+<script src="/js/issueComplete.js" type="text/javascript"></script>

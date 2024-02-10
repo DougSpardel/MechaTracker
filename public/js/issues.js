@@ -22,4 +22,5 @@ const issueCreationHandler = async (event) => {
     }
 }
 
+
 document.addEventListener('submit', issueCreationHandler)

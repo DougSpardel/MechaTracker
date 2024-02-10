@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <link rel="stylesheet" href="./style.css">
-    
-    {{!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script> --}}
+
+    {{!--
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script> --}}
 </head>
+
 <body>
     <header>
-    <div class="container">
-        <h1>MechaTracker</h1>
-    </div>
-    <nav>
-        <a href={{ nav1 }}>{{ tNav1 }}</a>
-        
-        {{#if loggedIn }}
-        <button>logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-    </nav>
-</header>
-<aside>
-    {{#each vehicle_number}}
-    <h2>Vehicles</h2>
-    <p>{{vehicle_number}}</p>
-</aside>
-<main>
-{{{body}}}
-  </main>
-    
+        <div class="container">
+            <h1>MechaTracker</h1>
+        </div>
+        <nav>
+            <a href={{ nav1 }}>{{ tNav1 }}</a>
+
+            {{#if loggedIn }}
+            <button>logout</button>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
+        </nav>
+    </header>
+    {{!-- <aside>
+        <h2>Vehicles</h2>
+        {{#each vehicle_number}}
+        <p>{{vehicle_number}}</p>
+        {{/each}}
+    </aside> --}}
+    <main>
+        {{{body}}}
+    </main>
+
 </body>
+
 </html>
