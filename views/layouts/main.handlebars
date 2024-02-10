@@ -15,7 +15,7 @@
     </div>
     <nav>
         <a href={{ nav1 }}>{{ tNav1 }}</a>
-        <a href={{ nav2 }}>{{ tNav2 }}</a>
+        
         {{#if loggedIn }}
         <button>logout</button>
         {{else}}
@@ -23,6 +23,11 @@
         {{/if}}
     </nav>
 </header>
+<aside>
+    {{#each vehicle_number}}
+    <h2>Vehicles</h2>
+    <p>{{vehicle_number}}</p>
+</aside>
 <main>
 {{{body}}}
   </main>
