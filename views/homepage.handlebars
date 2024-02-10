@@ -1,5 +1,14 @@
 <div class="" id="unIssue">
     {{!-- issues --}}
+    {{#each issues as |issue|}}
+    <div>
+        <h2>{{}}</h2>
+    </div>
+    {{#if issue_status}}
+    <h3>Incomplete</h3>
+    {{else}}
+    <h3>Complete</h3>
+    {{/if}}
 </div>
 <div>
     {{!-- vehicle list --}}
