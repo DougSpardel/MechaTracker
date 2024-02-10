@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Garage Maintenance Tracker</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <link rel="stylesheet" href="./style.css">
     
     {{!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script> --}}
 </head>
-
 <body>
+    <header>
     <div class="container">
-        <h1>Garage Maintenance Tracker</h1>
+        <h1></h1>
     </div>
-
+    <nav>
+        <a href={{ nav1 }}>{{ tNav1 }}</a>
+        <a href={{ nav2 }}>{{ tNav2 }}</a>
+        {{#if loggedIn }}
+        <button>logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+    </nav>
+</header>
+<main>
 {{{body}}}
-  
- 
-
+  </main>
     
 </body>
 </html>

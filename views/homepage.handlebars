@@ -1,46 +1,6 @@
-        <!-- Form for adding/updating cars -->
-        <form id="car-form">
-            <div class="form-group">
-                <label for="vin">Vehicle VIN:</label>
-                <input type="text" id="vin" name="vin" placeholder="Enter VIN">
-            </div>
-            <div class="form-group">
-                <label for="issue">Issue:</label>
-                <input type="text" id="issue" name="issue" placeholder="Describe the issue">
-            </div>
-            <div class="form-group">
-                <label for="status">Status:</label>
-                <select id="status" name="status">
-                    <option value="In Progress">In Progress</option>
-                    <option value="Awaiting Parts">Awaiting Parts</option>
-                    <option value="Completed">Completed</option>
-                </select>
-            </div>
-            <input type="submit" value="Add/Update Car">
-        </form>
-
-        <!-- Handlebars Template for Displaying Cars -->
-        <script id="car-status-template" type="text/x-handlebars-template">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Vehicle VIN</th>
-                        <th>Issue</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each cars}}
-                    <tr>
-                        <td>{{vin}}</td>
-                        <td>{{issue}}</td>
-                        <td>{{status}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </script>
-
-        <!-- Container for the Compiled Template -->
-        <div id="car-status-container"></div>
-    </div>
+<div class="" id="unIssue">
+    {{!-- issues --}}
+</div>
+<div>
+    {{!-- vehicle list --}}
+</div>

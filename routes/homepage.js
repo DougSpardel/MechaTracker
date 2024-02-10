@@ -4,12 +4,20 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    res.render('homepage')    
+    res.render('homepage', {
+      title:'Home Page'
+    })    
 
 });
 
 router.get('/issues', async (req,res) => {
-  res.render('issues')
+  res.render('issues', {
+    title: 'Issue'
+  })
+})
+
+router.get('/maintenance', (req,res) => {
+  res.render('maintenance')
 })
 
 router.get('/login', (req, res) => {
@@ -18,7 +26,9 @@ router.get('/login', (req, res) => {
       return;
     }
   
-    res.render('login');
+    res.render('login',{
+      title:'Login'
+    });
   });
   
 module.exports = router
