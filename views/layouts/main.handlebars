@@ -19,19 +19,21 @@
         <nav>
             <a href={{ nav1 }}>{{ tNav1 }}</a>
 
-            {{#if loggedIn }}
+            {{#if logged_in }}
             <button>logout</button>
             {{else}}
             <a href="/login">Login</a>
             {{/if}}
         </nav>
     </header>
+    {{#if logged_in}}
     <aside>
         <h2>Vehicles</h2>
         {{#each vehicle_number}}
         <p>{{vehicle_number}}</p>
         {{/each}}
     </aside>
+    {{/if}}
     <main>
         {{{body}}}
     </main>
