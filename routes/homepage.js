@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const {Issues} = require('../models');
+const withAuth = require('../utils/auth');
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const issuesData = await Issues.findAll(
    
@@ -17,7 +18,7 @@ router.get('/', async (req, res) => {
       nav1:'/issues',
       tNav1:'Issue' ,
       issues,
-      loggedIn: req.session.loggedIn
+      logged_in: req.session.logged_in
   });
 } catch (error) {
     res.status(500).json({ message: error.message });
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
 
 
 
-router.get('/issues', async (req,res) => {
+router.get('/issues', withAuth, async (req,res) => {
   try {
     const issuesData = await Issues.findAll(
    
@@ -41,7 +42,8 @@ router.get('/issues', async (req,res) => {
     title: 'Issue',
     nav1:'/',
     tNav1:'Home' ,
-    issues
+    issues,
+    logged_in: req.session.logged_in
 
   })
 }catch (error) {
@@ -55,10 +57,10 @@ router.get('/issues', async (req,res) => {
 
 
 router.get('/login', (req, res) => {
-    // if (req.session.loggedIn) {
-    //   res.redirect('/');
-    //   return;
-    // }
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
   
     res.render('login',{
       title:'Login'
