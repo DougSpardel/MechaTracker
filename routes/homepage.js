@@ -16,7 +16,8 @@ router.get('/', async (req, res) => {
       title:'Home Page',
       nav1:'/issues',
       tNav1:'Issue' ,
-      issues
+      issues,
+      loggedIn: req.session.loggedIn
   });
 } catch (error) {
     res.status(500).json({ message: error.message });
@@ -27,13 +28,29 @@ router.get('/', async (req, res) => {
 
 
 router.get('/issues', async (req,res) => {
+  try {
+    const issuesData = await Issues.findAll(
+   
+      
+    );
+    const issues = issuesData.map((issue)=>{
+      return issue.get({plain: true})
+    })
+  
   res.render('issues', {
     title: 'Issue',
     nav1:'/',
     tNav1:'Home' ,
+    issues
 
   })
-})
+}catch (error) {
+    res.status(500).json({ message: error.message });
+}
+
+    })    
+
+
 
 
 

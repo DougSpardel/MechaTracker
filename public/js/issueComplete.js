@@ -6,7 +6,7 @@ const issueCompletionHandler = async (event) => {
     const id = element.value;
     
     issue_status = true;
-    const response = await fetch('/api/issues/',id, {
+    const response = await fetch('/api/issues/'+id, {
               
       method:'PUT',
       body: JSON.stringify({issue_status }),

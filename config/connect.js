@@ -21,8 +21,10 @@
 const Sequelize = require('sequelize');
 require('dotenv').config(); // This will load the environment variables from the .env file
 
+let sequelize;
+
 // Check if the JAWSDB_URL is available; otherwise, fall back to individual credentials
-const sequelize = new Sequelize(process.env.JAWSDB_URL)
+ new Sequelize(process.env.JAWSDB_URL)
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
       host: process.env.DB_HOST,
@@ -32,5 +34,5 @@ const sequelize = new Sequelize(process.env.JAWSDB_URL)
       },
     });
 
-// // Export the sequelize instance for use in other files
+ // Export the sequelize instance for use in other files
 module.exports = sequelize;
