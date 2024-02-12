@@ -1,64 +1,60 @@
-
+/* Custom styles to enhance Bulma elements and maintain your design requirements */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    /* Padding removed to allow Bulma containers to manage spacing */
 }
-/* {.container {
-    width: 80%;
+
+/* Enhance container for Bulma compatibility */
+.container {
+    max-width: 80%; /* Adjust based on Bulma's container width */
     margin: auto;
     overflow: hidden;
 }
+
+/* Custom table styles */
 table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
 }
+
 table, th, td {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
 }
+
 th {
     background-color: #4CAF50;
     color: white;
 }
-tr:nth-child(even) {background-color: #f2f2f2}
-.form-group {
-    margin-bottom: 20px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-input[type="text"], select {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 20px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-input[type="submit"] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-.container {
-    display: flex;
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
+/* Form input enhancements for Bulma compatibility */
+.input, select {
+    width: 100%;
+    /* Other styles inherited from Bulma */
+}
+
+/* Adjustments for Bulma button styles */
+.button {
+    /* Additional custom button styles if needed */
+}
+
+/* Issues and form styling adjustments */
+#unIssue, .issueCreate {
+    /* Add custom styles or rely on Bulma's tiles and input */
+}
+
+/* Responsive adjustments for Bulma's flexbox layout */
 .left-side, .right-side {
-    display: inline;
-    padding: 10px;
-} */
+    /* Custom styles or use Bulma's columns */
+}
+
+/* Additional customizations for specific project needs */
+/* Add or modify as needed based on your layout and design preferences */

@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
       })
     
         res.render('homepage', {
-      title:'Home Page',
+      title:'Maintenance Tracker',
       nav1:'/issues',
       tNav1:'Issue' ,
       issues,
@@ -48,7 +48,7 @@ router.get('/issues', withAuth, async (req,res) => {
     })
   
   res.render('issues', {
-    title: 'Issue',
+    title: 'Input Issue',
     nav1:'/',
     tNav1:'Home' ,
     vehicles,

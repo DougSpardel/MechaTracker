@@ -1,21 +1,14 @@
-<div class="" id="unIssue">
-    {{!-- issues add a button for the issues incomplete --}}
-    
-    <div id="issues">
-        <h2>Issues</h2>
+<div id="unIssue">
+    <div id="issues" class="content">
+        <h2 class="title is-4">Issue Log</h2>
         {{#each issues as |issue|}}
-        {{#if issue_status}}
-        {{else}}
-        <div id=>
-        <p>Issue: {{id}}
-            Vehicle: {{vehicle_number}}
-            Issue: {{description}}</p>
-      
+        {{#unless issue_status}}
+        <div class="box">
+            <p><strong>Issue:</strong> {{issue.id}}<br>
+               <strong>Vehicle:</strong> {{issue.vehicle_number}}<br>
+               <strong>Description:</strong> {{issue.description}}</p>
         </div>
-        {{/if}}
+        {{/unless}}
         {{/each}}
     </div>
-    
-
 </div>
-
