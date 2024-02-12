@@ -2,12 +2,19 @@ const{Model, DataTypes} = require('sequelize');
 const bcrypt = require('bcrypt')
 const sequelize = require('../config/connect');
 
+// will check the bcrypted password when compared
 class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
       }
 }
 
+// JSON format
+// {
+//    "user_name": "Eden"
+//    "email": "goatsRcool@gmail.com"
+//    "password":"password12345"
+// }
 
 User.init(
     {
@@ -39,6 +46,7 @@ User.init(
     },
     {
         hooks: {
+            // password hashes
             beforeCreate: async (newUserData) => {
               newUserData.password = await bcrypt.hash(newUserData.password, 10);
               return newUserData;

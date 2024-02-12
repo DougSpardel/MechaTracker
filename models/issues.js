@@ -3,6 +3,13 @@ const sequelize = require('../config/connect');
 
 class Issues extends Model {}
 
+// JSON format
+// {
+//    "vehicle_number": "4231"
+//    "description": "broke the door off"
+//    "issue_status":"true"
+// }
+
 Issues.init(
     {
         id:{
