@@ -42,7 +42,7 @@
 //  // Export the sequelize instance for use in other files
 // module.exports = sequelize;
 
-const {Sequelize} = require('sequelize');
+const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
