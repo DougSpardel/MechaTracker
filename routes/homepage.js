@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {Issues} = require('../models');
+const {Issues, Vehicle} = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -13,11 +13,20 @@ router.get('/', withAuth, async (req, res) => {
     const issues = issuesData.map((issue)=>{
       return issue.get({plain: true})
     })
+    const vehicleData = await Vehicle.findAll(
+   
+      
+      );
+      const vehicles = vehicleData.map((vehicle)=>{
+        return vehicle.get({plain: true})
+      })
+    
         res.render('homepage', {
       title:'Home Page',
       nav1:'/issues',
       tNav1:'Issue' ,
       issues,
+      vehicles,
       logged_in: req.session.logged_in
   });
 } catch (error) {
@@ -30,19 +39,19 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/issues', withAuth, async (req,res) => {
   try {
-    const issuesData = await Issues.findAll(
+    const vehicleData = await Vehicle.findAll(
    
       
     );
-    const issues = issuesData.map((issue)=>{
-      return issue.get({plain: true})
+    const vehicles = vehicleData.map((vehicle)=>{
+      return vehicle.get({plain: true})
     })
   
   res.render('issues', {
     title: 'Issue',
     nav1:'/',
     tNav1:'Home' ,
-    issues,
+    vehicles,
     logged_in: req.session.logged_in
 
   })
