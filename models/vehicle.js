@@ -3,6 +3,13 @@ const sequelize = require('../config/connect');
 
 class Vehicle extends Model {}
 
+// JSON format
+// {
+//    "vehicle_number": "4231"
+//    "vehicle_make": "broke the door off"
+//    "vehicle_model":"true"
+// }
+
 Vehicle.init(
     {
         vehicle_number:{
