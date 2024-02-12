@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    {{!--
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script> --}}
+    
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <a href={{ nav1 }}>{{ tNav1 }}</a>
 
             {{#if logged_in }}
-            <button>logout</button>
+            <button id="logout">logout</button>
             {{else}}
             <a href="/login">Login</a>
             {{/if}}
@@ -29,7 +29,7 @@
     {{#if logged_in}}
     <aside>
         <h2>Vehicles</h2>
-        {{#each vehicle_number}}
+        {{#each vehicles as |vehicle|}}
         <p>{{vehicle_number}}</p>
         {{/each}}
     </aside>
@@ -37,7 +37,7 @@
     <main>
         {{{body}}}
     </main>
-
+<script src="/js/logout.js" type="text/javascript"></script>
 </body>
 
 </html>

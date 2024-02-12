@@ -3,5 +3,15 @@
         "user_name":"Darbie",
         "email":"captianbeau@gmail.com",
         "password":"password12345"
+    },
+    {
+        "user_name":"Beau",
+        "email":"carbon@gmail.com",
+        "password":"password12345"
+    },
+    {
+        "user_name":"Fran",
+        "email":"sockhop@gmail.com",
+        "password":"password12345"
     }
 ]
