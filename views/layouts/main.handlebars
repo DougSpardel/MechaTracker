@@ -36,10 +36,10 @@
     </nav>
     {{#if logged_in}}
     <aside class="menu">
-        {{!-- <p class="menu-label">Vehicles</p> --}}
+        <p class="menu-label">Vehicles</p>
         <ul class="menu-list">
             {{#each vehicles as |vehicle|}}
-            <li><a>{{vehicle.number}}</a></li>
+            <li><a>{{vehicle.vehicle_number}}</a></li>
             {{/each}}
         </ul>
     </aside>
