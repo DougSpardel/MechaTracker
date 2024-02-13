@@ -12,7 +12,9 @@ body {
     margin: auto;
     overflow: hidden;
 }
-
+.log {
+    margin-right: 10px;
+}
 /* Custom table styles */
 table {
     width: 100%;
@@ -55,6 +57,8 @@ tr:nth-child(even) {
 .left-side, .right-side {
     /* Custom styles or use Bulma's columns */
 }
-
+.vehiclelist{
+    background-color: aliceblue;
+}
 /* Additional customizations for specific project needs */
 /* Add or modify as needed based on your layout and design preferences */
