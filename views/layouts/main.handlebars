@@ -35,19 +35,23 @@
         </div>
     </nav>
     {{#if logged_in}}
-    <aside class="menu">
-        <p class="menu-label">Vehicles</p>
+    
+    {{/if}}
+    
+    <main class="tile is-parent" >
+       
+        <div class="log container tile is-child is-10">
+            {{{body}}}
+        </div>
+        
+         <aside class="vehiclelist  tile is-child box">
+        <h3 class=" subtitle is-4 ">Vehicles</h3>
         <ul class="menu-list">
             {{#each vehicles as |vehicle|}}
             <li><a>{{vehicle.vehicle_number}}</a></li>
             {{/each}}
         </ul>
     </aside>
-    {{/if}}
-    <main class="section">
-        <div class="container">
-            {{{body}}}
-        </div>
     </main>
     <script src="/js/logout.js" type="text/javascript"></script>
 </body>
