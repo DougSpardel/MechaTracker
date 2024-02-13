@@ -1,9 +1,9 @@
 const sequelize = require('sequelize')
 const router = require('express').Router();
-const {Issues,Vehicle} = require('../../models'); // Update the path to where your Issues model is located
+const {Issues,Vehicle} = require('../../models');
 
 
-// GET all issues
+// GET all issues with associated Vehicle info
 router.get('/', async (req, res) => {
     try {
         const issues = await Issues.findAll(
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET a single issue by id
+// GET a single issue by id with associated Vehicle info
 router.get('/:id', async (req, res) => {
     try {
         const issue = await Issues.findByPk(req.params.id, {
@@ -30,12 +30,6 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
-
-// // GET an issue with its associated vehicle
-// router.get('/:id/withVehicle', async (req, res) => {
-//     try{
-
-//     }
 
 // POST a new issue
 router.post('/', async (req, res) => {
