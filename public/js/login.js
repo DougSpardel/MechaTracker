@@ -1,10 +1,12 @@
-//TODO add specific classes for the selectors and listener
-
+//logs user in by comparing email and password an sending a post to routes/api/userRoutes
 const loginFormHandler = async (event) =>{
     event.preventDefault();
 
+//query for user input
     const email = document.querySelector('#emailLog').value.trim();
     const password = document.querySelector('#passwordLog').value.trim();
+ 
+// post to the user routes
 try{
     if(email && password) {
         const response = await fetch('/api/user/login', {
@@ -15,7 +17,8 @@ try{
         if(response.ok) {
             document.location.replace('/');}
         }}catch(err){
-            console.log(err)
+            
+            //want to create element not alert
             alert('Failed to log in');
         }
     

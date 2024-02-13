@@ -1,8 +1,8 @@
 const express = require('express');
-const {Vehicle, Issues} = require('../../models'); // Update the path to where your Vehicle model is located
+const {Vehicle, Issues} = require('../../models');
 const router = express.Router();
 
-// GET all vehicles
+// GET all vehicles and associated Issues
 router.get('/', async (req, res) => {
     try {
         const vehicles = await Vehicle.findAll({
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET a single vehicle by vehicle_number
+// GET a single vehicle by vehicle_number and associated Issues
 router.get('/:vehicle_number', async (req, res) => {
     try {
         const vehicle = await Vehicle.findByPk(req.params.vehicle_number, {
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// You might want PUT and DELETE routes for Vehicle as well, similar to the Issues routes.
+//PUT update vehicle by id  Needs to be vehicle_number
 router.put('/:id', async (req, res) => {
     try {
         const vehicle = await Vehicle.update(req.body, {
@@ -56,6 +56,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+//DELETE vehicle by id  Needs to be vehicle_number
 router.delete("/:id", async (req,res)=>{
     try{
         const deleted=await Vehicle.destroy(

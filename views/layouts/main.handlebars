@@ -34,16 +34,16 @@
             </div>
         </div>
     </nav>
-    {{#if logged_in}}
     
-    {{/if}}
+    
+    
     
     <main class="tile is-parent" >
        
         <div class="log container tile is-child is-10">
             {{{body}}}
         </div>
-        
+    {{#if logged_in}}
          <aside class="vehiclelist  tile is-child box">
         <h3 class=" subtitle is-4 ">Vehicles</h3>
         <ul class="menu-list">
@@ -52,6 +52,7 @@
             {{/each}}
         </ul>
     </aside>
+    {{/if}}
     </main>
     <script src="/js/logout.js" type="text/javascript"></script>
 </body>
