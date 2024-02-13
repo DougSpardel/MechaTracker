@@ -1,0 +1,14 @@
+<div id="unIssue">
+    <div id="issues" class="content">
+        <h2 class="title is-4">Issue Log</h2>
+        {{#each issues as |issue|}}
+        {{#unless issue_status}}
+        <div class="box">
+            <p><strong>Issue:</strong> {{issue.id}}<br>
+               <strong>Vehicle:</strong> {{issue.vehicle_number}}<br>
+               <strong>Description:</strong> {{issue.description}}</p>
+        </div>
+        {{/unless}}
+        {{/each}}
+    </div>
+</div>

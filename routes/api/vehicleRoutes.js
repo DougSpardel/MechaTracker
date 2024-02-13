@@ -21,7 +21,7 @@ router.get('/:vehicle_number', async (req, res) => {
             include: [{model: Issues}]
         });
         if (vehicle) {
-            res.json(vehicle);
+            res.status(200).json(vehicle);
         } else {
             res.status(404).json({ message: 'Vehicle not found' });
         }
@@ -34,9 +34,9 @@ router.get('/:vehicle_number', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const vehicle = await Vehicle.create(req.body);
-        res.status(201).json(vehicle);
+        res.status(200).json(vehicle);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        res.status(500).json({ message: error.message });
     }
 });
 
